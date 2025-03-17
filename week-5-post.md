@@ -196,7 +196,7 @@ If *The Great Gatsby* were told from the perspectives of Daisy Buchanan or Jay G
 **Jay Gatsby's Perspective**
 1. **Romantic Idealism**: Gatsby's perspective would be filled with romantic idealism and his unwavering belief in the power of love. Readers would experience his dreams and aspirations firsthand, as well as his relentless pursuit of Daisy. His narrative would emphasize his hope and determination to recreate the past and achieve his version of the American Dream.
 
-2. **Mysterious Past*: Gatsby's viewpoint would provide a detailed account of his mysterious past, including his rise from poverty to wealth. His reflections on his early life, his time with Dan Cody, and his experiences during the war would offer a richer understanding of his character and motivations.
+2. **Mysterious Past**: Gatsby's viewpoint would provide a detailed account of his mysterious past, including his rise from poverty to wealth. His reflections on his early life, his time with Dan Cody, and his experiences during the war would offer a richer understanding of his character and motivations.
 
 3. **Obsession and Desperation**: Through Gatsby's eyes, readers would witness his obsession with Daisy and the lengths he goes to win her back. His thoughts and actions would reveal the desperation and vulnerability underlying his confident exterior. This perspective would highlight the tragic nature of his quest and the futility of his dreams.
 
