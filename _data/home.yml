@@ -21,10 +21,10 @@ project_entries:
     url: week-3-post
     desc: Week 3
 
-  - title: Week 4
-    url: week-4-post
-    desc: Week 4
-
-  - title: Week 5
+  - title: Solving Problems with Microsoft Copilot
     url: week-5-post
     desc: Week 5
+
+  - title: Survival Of The Best Fit
+    url: week-6-post
+    desc: Week 6
