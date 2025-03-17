@@ -28,14 +28,12 @@ tags: [cscc]
 
 ***
 
-#### Add a written description of the steps you took and what the LLM provided to you in response to your interactions:
+### Add a written description of the steps you took and what the LLM provided to you in response to your interactions:
 **What did you ask the LLM to do, or how did you interact with the LLM using the book you downloaded from Project Gutenberg?:**
 
 ***
 
-- Summarize the book
-<details>
-<summary>Microsoft CoPilot Response</summary>
+### Summarize the book
 
 Sure! Here's a summary of The Great Gatsby:
 
@@ -70,13 +68,9 @@ In the aftermath, Nick reflects on the moral decay and the empty pursuit of weal
 
 Would you like more details on any specific part of the book or its themes?
 
-</details>
-
 ***
 
-- Describe the characters as if they were in the 2020’s
-<details>
-<summary>Microsoft CoPilot Response</summary>
+### Describe the characters as if they were in the 2020’s
 
 Sure! Let's imagine the characters from The Great Gatsby living in the 2020s:
 
@@ -124,13 +118,9 @@ Sure! Let's imagine the characters from The Great Gatsby living in the 2020s:
 
 These modern profiles maintain the essence of the characters while placing them in contemporary settings and professions. Let me know if you'd like more details or if there's anything else I can help with!
 
-</details>
-
 ***
 
-- What motivates Gatsby's obsession with Daisy?
-<details>
-<summary>Microsoft CoPilot Response</summary>
+### What motivates Gatsby's obsession with Daisy?
 
 Gatsby's obsession with Daisy is driven by several key factors:
 
@@ -157,13 +147,9 @@ Gatsby's obsession with Daisy allows him to escape from the harsh realities of h
 
 In summary, Gatsby's obsession with Daisy is a complex mix of idealization, nostalgia, pursuit of the American Dream, desire for social status, personal insecurity, romantic idealism, and a need to escape reality. These motivations combine to create a powerful and ultimately tragic fixation on a woman who represents everything Gatsby yearns for but can never truly attain.
 
-</details>
-
 ***
 
-- What role does Nick Carraway play as the narrator? How reliable is his perspective?
-<details>
-<summary>Microsoft CoPilot Response</summary>
+### What role does Nick Carraway play as the narrator? How reliable is his perspective?
 
 Nick Carraway plays a crucial role as the narrator in *The Great Gatsby*. His perspective shapes the reader's understanding of the characters and events in the novel. Let's explore his role and the reliability of his perspective:
 
@@ -192,13 +178,9 @@ Nick Carraway's role as the narrator is essential to the structure and themes of
 
 Would you like to explore more about Nick's character or any other aspect of the novel?
 
-</details>
-
 ***
 
--	How might the story differ if it was told from other characters’ point of view, like Daisy or Gatsby instead of Nick’s?
-<details>
-<summary>Microsoft CoPilot Response</summary>
+### How might the story differ if it was told from other characters’ point of view, like Daisy or Gatsby instead of Nick’s?
 
 If *The Great Gatsby* were told from the perspectives of Daisy Buchanan or Jay Gatsby instead of Nick Carraway, the story would likely differ significantly in terms of tone, focus, and the insights provided. Here's how the narrative might change from each of their viewpoints:
 
@@ -225,13 +207,9 @@ Telling the story from Daisy's or Gatsby's perspective would offer new dimension
 
 Would you like to explore more about how other characters' perspectives might change the story, or is there another aspect of the novel you're curious about?
 
-</details>
-
 ***
 
--	Retell the scene of when Gatsby reunites with Daisy Buchanan at Nick Carraway's house and rewrite it from Gatsby’s perspective
-<details>
-<summary>Microsoft CoPilot Response</summary>
+Retell the scene of when Gatsby reunites with Daisy Buchanan at Nick Carraway's house and rewrite it from Gatsby’s perspective
 
 **Gatsby's Perspective: Reunion with Daisy at Nick's House**
 
@@ -265,13 +243,9 @@ As we sat there, hand in hand, I vowed to do whatever it took to win her back. T
 
 This retelling from Gatsby's perspective highlights his emotional turmoil, his deep love for Daisy, and his unwavering determination to win her back. It provides a more intimate look at his thoughts and feelings during this pivotal moment in the story. Let me know if there's anything else you'd like to explore!
 
-</details>
-
 ***
 
--	Other similar books to *The Great Gatsby*
-<details>
-<summary>Microsoft CoPilot Response</summary>
+### Other similar books to *The Great Gatsby*
 
 If you enjoyed *The Great Gatsby*, you might find these books appealing as they share similar themes, settings, or styles:
 
@@ -323,8 +297,6 @@ A philosophical novel about a young shepherd's journey to find his personal lege
 These books offer a variety of perspectives and themes that resonate with the essence of The Great Gatsby. Whether you're looking for historical romance, social critique, or deep character studies, these novels provide rich and engaging reading experiences.
 
 Would you like more information on any of these books or recommendations based on specific themes?
-
-</details>
 
 ***
 
