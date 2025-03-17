@@ -24,6 +24,7 @@ tags: [cscc]
 
 **Add a written description of the steps you took and what the LLM provided to you in response to your interactions**
 > What did you ask the LLM to do, or how did you interact with the LLM using the book you downloaded from Project Gutenberg?
+
 - Summarize the book
 <details>
 <summary>Summarize the book Microsoft CoPilot Response</summary>
