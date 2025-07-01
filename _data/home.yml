@@ -28,3 +28,7 @@ project_entries:
   - title: Survival Of The Best Fit
     url: week-6-post
     desc: Week 6
+
+  - title: Machine Learning II Final Project: Parkinson’s Disease Detection
+    url: final-project-post
+    desc: An End-to-End ML Solution Using Neural Networks and Deep Learning
