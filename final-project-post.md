@@ -1,7 +1,5 @@
 ---
 layout: post
-title: "Machine Learning II Final Project: Parkinson's Disease Detection"
-date: 2025-07-01
 author: Lakshmi Balasubramaniam
 tags: [cscc]
 ---
