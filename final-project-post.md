@@ -15,6 +15,7 @@ Proper credit is given to the original authors:
 
 According to the UCI ML Repository, the dataset "is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). Each column in the table is a particular voice measure, and each row corresponds one of 195 voice recording from these individuals ("name" column). The main aim of the data is to discriminate healthy people from those with PD, according to "status" column which is set to 0 for healthy and 1 for PD"
 
+***
 ## Step 1: Define the Business Problem
 - What is the goal? Why does it matter?
 - State if it's: Supervised, Unsupervised, Recommender, or Reinforcement and why you chose that method
