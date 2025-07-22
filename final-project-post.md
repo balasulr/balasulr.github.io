@@ -64,6 +64,67 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 - The name column has 195 unique values, confirming it is an identifier
 - Parkinson’s dominates with around 147 samples
 
+### Code:
+```python
+# Feature Names List
+df.columns.tolist()
+```
+
+### Results:
+```
+['name',
+ 'MDVP:Fo(Hz)',
+ 'MDVP:Fhi(Hz)',
+ 'MDVP:Flo(Hz)',
+ 'MDVP:Jitter(%)',
+ 'MDVP:Jitter(Abs)',
+ 'MDVP:RAP',
+ 'MDVP:PPQ',
+ 'Jitter:DDP',
+ 'MDVP:Shimmer',
+ 'MDVP:Shimmer(dB)',
+ 'Shimmer:APQ3',
+ 'Shimmer:APQ5',
+ 'MDVP:APQ',
+ 'Shimmer:DDA',
+ 'NHR',
+ 'HNR',
+ 'status',
+ 'RPDE',
+ 'DFA',
+ 'spread1',
+ 'spread2',
+ 'D2',
+ 'PPE']
+```
+
+### Code:
+```python
+# Shape of data
+df.shape
+```
+
+### Results:
+```
+(195, 24)
+```
+
+Data has 195 rows and 24 columns
+
+### Code:
+```python
+# Data types in dataset
+df.dtypes.value_counts()
+```
+
+### Results:
+```
+float64    22
+object      1
+int64       1
+Name: count, dtype: int64
+```
+
 ![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
 ![Model Accuracy Comparison](/assets/images/df_Correlation.matrix_output.png)
