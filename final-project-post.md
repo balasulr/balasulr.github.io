@@ -58,6 +58,12 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
+### Key Insights
+- 195 rows & 24 columns
+- No missing values
+- The name column has 195 unique values, confirming it is an identifier
+- Parkinson’s dominates with around 147 samples
+
 ![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
 ![Model Accuracy Comparison](/assets/images/df_Correlation.matrix_output.png)
