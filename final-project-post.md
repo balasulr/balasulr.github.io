@@ -32,9 +32,9 @@ ML Type: Supervised Learning (Binary Classification) since the model is trained 
 ## Step 2: Data Acquisition & EDA
 - Show key insights and visualizations
 
-![Model Accuracy Comparison](/assets/images/Target.variable.distribution.pie_bar.chart_output.png)
+![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
-![Model Accuracy Comparison](/assets/images/Correlation.matrix_output.png)
+![Model Accuracy Comparison](/assets/images/df_Correlation.matrix_output.png)
 
 ***
 ## Step 3: Data Cleaning
