@@ -70,6 +70,9 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 df.columns.tolist()
 ```
 
+<details>
+<summary><strong> Feature Names List Results</strong></summary>
+
 ### Results:
 ``` python
 ['name',
@@ -97,6 +100,7 @@ df.columns.tolist()
  'D2',
  'PPE']
 ```
+</details>
 
 ### Code:
 ```python
@@ -125,6 +129,51 @@ object      1
 int64       1
 Name: count, dtype: int64
 ```
+
+### Code:
+```python
+# Inspect the dataset
+df.info()
+```
+
+<details>
+<summary><strong> Inspect the dataset Results</strong></summary>
+
+### Results:
+```python
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 195 entries, 0 to 194
+Data columns (total 24 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   name              195 non-null    object 
+ 1   MDVP:Fo(Hz)       195 non-null    float64
+ 2   MDVP:Fhi(Hz)      195 non-null    float64
+ 3   MDVP:Flo(Hz)      195 non-null    float64
+ 4   MDVP:Jitter(%)    195 non-null    float64
+ 5   MDVP:Jitter(Abs)  195 non-null    float64
+ 6   MDVP:RAP          195 non-null    float64
+ 7   MDVP:PPQ          195 non-null    float64
+ 8   Jitter:DDP        195 non-null    float64
+ 9   MDVP:Shimmer      195 non-null    float64
+ 10  MDVP:Shimmer(dB)  195 non-null    float64
+ 11  Shimmer:APQ3      195 non-null    float64
+ 12  Shimmer:APQ5      195 non-null    float64
+ 13  MDVP:APQ          195 non-null    float64
+ 14  Shimmer:DDA       195 non-null    float64
+ 15  NHR               195 non-null    float64
+ 16  HNR               195 non-null    float64
+ 17  status            195 non-null    int64  
+ 18  RPDE              195 non-null    float64
+ 19  DFA               195 non-null    float64
+ 20  spread1           195 non-null    float64
+ 21  spread2           195 non-null    float64
+ 22  D2                195 non-null    float64
+ 23  PPE               195 non-null    float64
+dtypes: float64(22), int64(1), object(1)
+memory usage: 36.7+ KB
+```
+</details>
 
 ![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
