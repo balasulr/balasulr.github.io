@@ -109,8 +109,7 @@ df.shape
 (195, 24)
 ```
 
-### Data Summary Insight
-- Data has 195 rows and 24 columns
+Data has 195 rows and 24 columns
 
 ### Code:
 ```python
