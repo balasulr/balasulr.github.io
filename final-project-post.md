@@ -70,9 +70,6 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 df.columns.tolist()
 ```
 
-<details>
-<summary><strong> Feature Names List Results</strong></summary>
-
 ### Results:
 ``` python
 ['name',
@@ -100,7 +97,6 @@ df.columns.tolist()
  'D2',
  'PPE']
 ```
-</details>
 
 ### Code:
 ```python
@@ -136,9 +132,6 @@ Name: count, dtype: int64
 df.info()
 ```
 
-<details>
-<summary><strong> Inspect the dataset Results</strong></summary>
-
 ### Results:
 ```python
 <class 'pandas.core.frame.DataFrame'>
@@ -173,7 +166,6 @@ Data columns (total 24 columns):
 dtypes: float64(22), int64(1), object(1)
 memory usage: 36.7+ KB
 ```
-</details>
 
 ![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
