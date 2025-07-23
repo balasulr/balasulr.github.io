@@ -305,6 +305,67 @@ This heatmap visualizes the correlation between all numerical features in the da
 ## Step 3: Data Cleaning
 - Handle missing values, transformations, scaling
 
+### Code:
+```python
+# Drop identifier column of name 
+df.drop(['name'], axis=1, inplace=True)
+```
+
+- Identifier column **'name'** removed
+- Dataset now contains **23 numerical features** suitable for modeling
+
+### Code:
+```python
+# Check for Missing Values
+df.isnull().sum()
+```
+
+### Results:
+```python
+MDVP:Fo(Hz)         0
+MDVP:Fhi(Hz)        0
+MDVP:Flo(Hz)        0
+MDVP:Jitter(%)      0
+MDVP:Jitter(Abs)    0
+MDVP:RAP            0
+MDVP:PPQ            0
+Jitter:DDP          0
+MDVP:Shimmer        0
+MDVP:Shimmer(dB)    0
+Shimmer:APQ3        0
+Shimmer:APQ5        0
+MDVP:APQ            0
+Shimmer:DDA         0
+NHR                 0
+HNR                 0
+status              0
+RPDE                0
+DFA                 0
+spread1             0
+spread2             0
+D2                  0
+PPE                 0
+dtype: int64
+```
+
+- No missing values found in any column
+- Dataset is clean and ready for scaling and modeling
+
+### Code:
+```python
+# Feature Scaling
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+
+X = scaler.fit_transform(df.drop(['status'], axis=1))
+y = df['status']
+```
+
+All numerical features (excluding `status`) scaled using `StandardScaler`  
+- `X` now contains the transformed feature matrix  
+- `y` retains the binary target labels for classification
+
 ***
 ## Step 4: Modeling
 - Build one or more models aligned with your problem type
