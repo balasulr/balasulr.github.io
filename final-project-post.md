@@ -16,6 +16,27 @@ Proper credit is given to the original authors:
 According to the UCI ML Repository, the dataset "is composed of a range of biomedical voice measurements from 31 people, 23 with Parkinson's disease (PD). Each column in the table is a particular voice measure, and each row corresponds one of 195 voice recording from these individuals ("name" column). The main aim of the data is to discriminate healthy people from those with PD, according to "status" column which is set to 0 for healthy and 1 for PD"
 
 ***
+## Import statements
+This project uses the following import statements:
+```python
+# Data Handling
+import pandas as pd
+
+# Visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Modeling and Evaluation
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+from sklearn.metrics import accuracy_score
+from tensorflow.keras.layers import Dropout
+from sklearn.metrics import accuracy_score, classification_report
+``` 
+
+***
 ## Step 1: Define the Business Problem
 - What is the goal? Why does it matter?
 - State if it's: Supervised, Unsupervised, Recommender, or Reinforcement and why you chose that method
@@ -165,6 +186,44 @@ Data columns (total 24 columns):
 dtypes: float64(22), int64(1), object(1)
 memory usage: 36.7+ KB
 ```
+### Code:
+```python
+# Summary Statistics for all columns transposed
+df.describe(include='all').T
+```
+
+### Results:
+```python
+          count  unique              top  freq        mean        std        min       25%       50%       75%        max
+name     195.0    195.0  phon_R01_S01_1   1.0         NaN        NaN        NaN       NaN       NaN       NaN        NaN
+MDVP:Fo(Hz)     195.0      NaN              NaN   NaN  154.228641  41.390065   88.333  117.572   148.79  182.769   260.105
+MDVP:Fhi(Hz)    195.0      NaN              NaN   NaN  197.104918  91.491548  102.145  134.8625  175.829  224.2055  592.03
+MDVP:Flo(Hz)    195.0      NaN              NaN   NaN  116.324631  43.521413   65.476   84.291  104.315  140.0185  239.17
+MDVP:Jitter(%)  195.0      NaN              NaN   NaN    0.00622   0.004848   0.00168   0.00346   0.00494   0.007365   0.03316
+MDVP:Jitter(Abs)195.0      NaN              NaN   NaN   0.000044   0.000035   0.000007  0.00002  0.00003  0.00006   0.00026
+MDVP:RAP        195.0      NaN              NaN   NaN   0.003306   0.002968   0.00068  0.00166  0.0025   0.003835  0.02144
+MDVP:PPQ        195.0      NaN              NaN   NaN   0.003446   0.002759   0.00092  0.00186  0.00269  0.003955  0.01958
+Jitter:DDP      195.0      NaN              NaN   NaN   0.00992    0.008903   0.00204  0.004985  0.00749  0.011505  0.06433
+MDVP:Shimmer    195.0      NaN              NaN   NaN   0.029709   0.018857   0.00954  0.016505  0.02297  0.037885  0.11908
+MDVP:Shimmer(dB)195.0      NaN              NaN   NaN   0.282251   0.194877   0.085    0.1485   0.221    0.35     1.302
+Shimmer:APQ3    195.0      NaN              NaN   NaN   0.015664   0.010153   0.00455  0.008245  0.01279  0.020265  0.05647
+Shimmer:APQ5    195.0      NaN              NaN   NaN   0.017878   0.012024   0.0057   0.00958   0.01347  0.02238   0.0794
+MDVP:APQ        195.0      NaN              NaN   NaN   0.024081   0.016947   0.00719  0.01308   0.01826  0.0294    0.13778
+Shimmer:DDA     195.0      NaN              NaN   NaN   0.046993   0.030459   0.01364  0.024735  0.03836  0.060795  0.16942
+NHR             195.0      NaN              NaN   NaN   0.024847   0.040418   0.00065  0.005925  0.01166  0.02564   0.31482
+HNR             195.0      NaN              NaN   NaN  21.885974   4.425764   8.441    19.198   22.085   25.0755  33.047
+status          195.0      NaN              NaN   NaN   0.753846   0.431878   0.0      1.0      1.0      1.0      1.0
+RPDE            195.0      NaN              NaN   NaN   0.498536   0.103942   0.25657  0.421306  0.495954 0.587562 0.685151
+DFA             195.0      NaN              NaN   NaN   0.718099   0.055336   0.574282 0.674758 0.722254 0.761881 0.825288
+spread1         195.0      NaN              NaN   NaN  -5.684397   1.090208  -7.964984 -6.450096 -5.720868 -5.046192 -2.434031
+spread2         195.0      NaN              NaN   NaN   0.22651    0.083406   0.006274 0.174351 0.218885 0.279234 0.450493
+D2              195.0      NaN              NaN   NaN   2.381826   0.382799   1.423287 2.099125 2.361532 2.636456 3.671155
+PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.044539 0.137451 0.194052 0.25298   0.527367
+```
+
+### Target Variable > Status
+- 0 for healthy
+- 1 for Parkinson’s
 
 ![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
