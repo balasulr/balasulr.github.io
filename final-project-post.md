@@ -225,9 +225,81 @@ PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.
 - 0 for healthy
 - 1 for Parkinson’s
 
-![Model Accuracy Comparison](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
+### Code:
+```python
+# Target variable distribution pie/bar chart
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+sns.countplot(x='status', data=df)
+plt.title("Class Distribution (0 = Healthy, 1 = Parkinson's)")
+plt.tight_layout()
+plt.show()
+```
+
+### Results:
+![Class Distribution Bar Chart](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
+
+The bar chart displays the count of samples for each status category:  
+- **Parkinson’s Disease (1)** → ~147 samples  
+- **Healthy (0)** → ~50 samples  
+- There is a class imbalance, which should be considered during model evaluation
+
+### Code:
+```python
+# Separate columns by type
+categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
+numerical_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
+
+categorical_cols, numerical_cols
+```
+
+### Results:
+```python
+(['name'],
+ ['MDVP:Fo(Hz)',
+  'MDVP:Fhi(Hz)',
+  'MDVP:Flo(Hz)',
+  'MDVP:Jitter(%)',
+  'MDVP:Jitter(Abs)',
+  'MDVP:RAP',
+  'MDVP:PPQ',
+  'Jitter:DDP',
+  'MDVP:Shimmer',
+  'MDVP:Shimmer(dB)',
+  'Shimmer:APQ3',
+  'Shimmer:APQ5',
+  'MDVP:APQ',
+  'Shimmer:DDA',
+  'NHR',
+  'HNR',
+  'status',
+  'RPDE',
+  'DFA',
+  'spread1',
+  'spread2',
+  'D2',
+  'PPE'])
+```
+
+### Code:
+```python
+# Correlation matrix
+plt.figure(figsize=(12, 10))
+sns.heatmap(df[numerical_cols].corr(), annot=True, fmt=".2f", cmap="coolwarm")
+plt.title("Correlation Heatmap")
+plt.tight_layout()
+plt.show()
+```
+
+### Results:
 ![Model Accuracy Comparison](/assets/images/df_Correlation.matrix_output.png)
+
+This heatmap visualizes the correlation between all numerical features in the dataset
+- Warm colors (red) represent strong positive correlations
+- Cool colors (blue) indicate negative or low correlations
+- High correlation between features like `MDVP:Jitter(%)`, `MDVP:RAP`, and `Jitter:DDP` suggests potential multicollinearity
+- These relationships may influence feature selection or regularization in modeling
 
 ***
 ## Step 3: Data Cleaning
