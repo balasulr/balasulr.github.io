@@ -71,7 +71,7 @@ df.columns.tolist()
 ```
 
 ### Results:
-```
+``` python
 ['name',
  'MDVP:Fo(Hz)',
  'MDVP:Fhi(Hz)',
@@ -105,11 +105,12 @@ df.shape
 ```
 
 ### Results:
-```
+```python
 (195, 24)
 ```
 
-Data has 195 rows and 24 columns
+### Data Summary Insight
+- Data has 195 rows and 24 columns
 
 ### Code:
 ```python
@@ -118,7 +119,7 @@ df.dtypes.value_counts()
 ```
 
 ### Results:
-```
+```python
 float64    22
 object      1
 int64       1
