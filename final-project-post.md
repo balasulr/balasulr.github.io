@@ -372,6 +372,91 @@ All numerical features (excluding `status`) scaled using `StandardScaler`
 ## Step 4: Modeling
 - Build one or more models aligned with your problem type
 
+### Code:
+```python
+# Preprocess data
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratify=y, random_state=42)
+```
+
+- Dataset is split into the training and testing sets using `train_test_split`  
+- `X_train` and `X_test` contain scaled feature inputs  
+- `y_train` and `y_test` contain binary classification labels
+
+### Code:
+```python
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Ensure only features are included (drop 'status' and 'name' if they exist)
+features = [col for col in df.columns if col not in ['name', 'status']]
+X_scaled = scaler.fit_transform(df[features])
+
+# Set up features and target
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, df['status'], test_size=0.2, stratify=df['status'], random_state=42)
+
+# Define the model
+model = Sequential([
+    Dense(64, input_shape=(X_train.shape[1],), activation='relu'),
+    Dense(32, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train the model
+model.fit(X_train, y_train, epochs=20, batch_size=16, validation_split=0.2)
+```
+
+### Results:
+```
+C:\Users\...\keras\src\layers\core\dense.py:93: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+Epoch 1/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 1s 35ms/step - accuracy: 0.5801 - loss: 0.7088 - val_accuracy: 0.7188 - val_loss: 0.5532
+Epoch 2/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 13ms/step - accuracy: 0.7681 - loss: 0.5357 - val_accuracy: 0.8750 - val_loss: 0.4608
+Epoch 3/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8526 - loss: 0.4670 - val_accuracy: 0.9062 - val_loss: 0.4013
+Epoch 4/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 19ms/step - accuracy: 0.8298 - loss: 0.4112 - val_accuracy: 0.9062 - val_loss: 0.3615
+Epoch 5/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8129 - loss: 0.4010 - val_accuracy: 0.9062 - val_loss: 0.3358
+Epoch 6/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8016 - loss: 0.3834 - val_accuracy: 0.9062 - val_loss: 0.3128
+Epoch 7/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step - accuracy: 0.8678 - loss: 0.3251 - val_accuracy: 0.9062 - val_loss: 0.2915
+Epoch 8/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step - accuracy: 0.8561 - loss: 0.3153 - val_accuracy: 0.9062 - val_loss: 0.2773
+Epoch 9/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step - accuracy: 0.8467 - loss: 0.3150 - val_accuracy: 0.9375 - val_loss: 0.2643
+Epoch 10/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8679 - loss: 0.2920 - val_accuracy: 0.9375 - val_loss: 0.2539
+Epoch 11/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8966 - loss: 0.2818 - val_accuracy: 0.9375 - val_loss: 0.2433
+Epoch 12/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.9265 - loss: 0.2605 - val_accuracy: 0.9375 - val_loss: 0.2310
+Epoch 13/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step - accuracy: 0.8976 - loss: 0.2871 - val_accuracy: 0.9375 - val_loss: 0.2197
+Epoch 14/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step - accuracy: 0.9155 - loss: 0.2862 - val_accuracy: 0.9375 - val_loss: 0.2150
+Epoch 15/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step - accuracy: 0.9186 - loss: 0.2395 - val_accuracy: 0.9062 - val_loss: 0.2102
+Epoch 16/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.9424 - loss: 0.2159 - val_accuracy: 0.9062 - val_loss: 0.2018
+Epoch 17/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.9488 - loss: 0.1926 - val_accuracy: 0.9062 - val_loss: 0.2013
+Epoch 18/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.9557 - loss: 0.1970 - val_accuracy: 0.9062 - val_loss: 0.1974
+Epoch 19/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.9334 - loss: 0.1913 - val_accuracy: 0.9062 - val_loss: 0.1906
+Epoch 20/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step - accuracy: 0.9459 - loss: 0.1809 - val_accuracy: 0.9062 - val_loss: 0.1858
+<keras.src.callbacks.history.History at 0x25acca5fa00>
+```
+
 ***
 ## Step 5: Model Evaluation
 - Report metrics
