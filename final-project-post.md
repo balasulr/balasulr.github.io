@@ -6,6 +6,7 @@ tags: [cscc]
 
 ### [Machine Learning II Final Project: Parkinson's Disease Detection]
 
+<a name="top"></a>
 ***
 ## Table of Contents
 - [Overview](#overview)
@@ -43,6 +44,7 @@ To install the required libraries **directly into the notebook's kernel**, use:
 
 ---
 
+[Back to Top](#top)
 ## Import statements
 This project uses the following import for data analysis and modeling:
 ```python
