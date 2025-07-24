@@ -582,4 +582,16 @@ To improve generalization and reduce overfitting, a `Dropout` layer was introduc
 ## Step 6: Deployment Plan
 - Briefly describe how you could deploy your model (e.g., API, web app, embedded system)
 
+A way that could deploy the model is via a RESTful web app built using **Streamlit** or **Gradio**.
+
+These frameworks provide lightweight, interactive interfaces where users can:
+- Manually input biomedical voice features
+- Upload files containing voice analysis metrics
+- Receive **real-time predictions** on Parkinson’s disease risk using the trained neural network
+
+Both tools support model hosting locally or on cloud platforms such as **Heroku**, **Render**, or **Hugging Face Spaces**, making them ideal for rapid prototyping and public access. Future enhancements could include:
+- User authentication for secure data input  
+- Integration with a backend API for automated file parsing and preprocessing  
+- Embedding into mobile or desktop diagnostic tools for clinical use
+
 ***
