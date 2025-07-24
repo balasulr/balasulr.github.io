@@ -6,6 +6,17 @@ tags: [cscc]
 
 ### [Machine Learning II Final Project: Parkinson's Disease Detection]
 
+- [Overview](#overview)  
+- [Library Installation Tip](#library-installation-tip)  
+- [Import Statements](#import-statements)  
+- [Step 1: Define the Business Problem](#step-1-define-the-business-problem)  
+- [Step 2: Data Acquisition & EDA](#step-2-data-acquisition--eda)  
+- [Step 3: Data Cleaning](#step-3-data-cleaning)  
+- [Step 4: Modeling](#step-4-modeling)  
+- [Step 5: Model Evaluation](#step-5-model-evaluation)  
+- [Model Assessment](#model-assessment)  
+- [Step 6: Deployment Plan](#step-6-deployment-plan)    
+
 ## Overview
 This project demonstrates an end-to-end ML Solution using Neural Networks and Deep Learning, applied to the Parkinson’s Disease Detection dataset originally contributed by **Max A. Little** and colleagues. It is available from the [UCI ML Repository](https://archive.ics.uci.edu/dataset/174/parkinsons) and licensed under **CC BY 4.0**.
 
