@@ -18,8 +18,19 @@ According to the UCI ML Repository, the dataset "is composed of a range of biome
 ***
 #### Developed the final project in Visual Studio Code using a Jupyter Notebook (.ipynb) with the Python 3.10.11 kernel
 
+---
+## Library Installation Tip
+To install the required libraries **directly into the notebook's kernel**, use:
+```python
+%pip install pandas matplotlib seaborn scikit-learn tensorflow
+```
+
+- `%pip` ensures libraries install within the active notebook kernel
+
+---
+
 ## Import statements
-This project uses the following import statements:
+This project uses the following import for data analysis and modeling:
 ```python
 # Data Handling
 import pandas as pd
@@ -31,16 +42,9 @@ import seaborn as sns
 # Modeling and Evaluation
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
-from sklearn.metrics import accuracy_score
-from tensorflow.keras.layers import Dropout
 from sklearn.metrics import accuracy_score, classification_report
-```
-
-To import the libraries, run:
-```python
-%pip install pandas matplotlib seaborn scikit-learn tensorflow
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
 ```
 
 ***
