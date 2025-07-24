@@ -463,6 +463,121 @@ Epoch 20/20
 - Show how you improved it
 - Write a short paragraph with your model assessment
 
+### Code:
+```python
+# Report metrics / Evaluate the model
+from sklearn.metrics import accuracy_score
+
+preds = (model.predict(X_test) > 0.5).astype('int32')
+print("TensorFlow Test Accuracy:", accuracy_score(y_test, preds))
+```
+
+### Results:
+```
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 48ms/step  
+TensorFlow Test Accuracy: 0.8974358974358975
+```
+
+- Final test accuracy: **89.74%**  
+- This result confirms strong generalization on unseen data
+
+### Code:
+```python
+# Improved model
+from tensorflow.keras.layers import Dropout
+
+# Ensure only features are included (drop 'status' and 'name' if they exist)
+features = [col for col in df.columns if col not in ['name', 'status']]
+target_column = 'status'
+
+# Scale Features
+scaler = StandardScaler()
+X_features_scaled = scaler.fit_transform(df[features])
+y_target = df[target_column]
+
+# Train-Test split
+X_train_scaled, X_test_scaled, y_train_target, y_test_target = train_test_split(
+    X_features_scaled, y_target, test_size=0.2, stratify=y_target, random_state=42
+)
+
+# Define the model with Dropout
+model_dropout = Sequential([
+    Dense(64, activation='relu'),
+    Dropout(0.3),
+    Dense(32, activation='relu'),
+    Dense(1, activation='sigmoid')
+])
+
+# Compile the model
+model_dropout.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train the model
+history_dropout = model_dropout.fit(
+    X_train_scaled, y_train_target,
+    epochs=20,
+    batch_size=16,
+    validation_split=0.2
+)
+
+from sklearn.metrics import accuracy_score, classification_report
+
+# Make Predictions
+y_pred_probs = model_dropout.predict(X_test_scaled)
+y_pred_class = (y_pred_probs > 0.5).astype('int32')
+
+# Evaluation Metrics
+print("Dropout Model Test Accuracy:", accuracy_score(y_test_target, y_pred_class))
+```
+
+### Results:
+```
+Epoch 1/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 1s 26ms/step - accuracy: 0.7638 - loss: 0.5445 - val_accuracy: 0.9062 - val_loss: 0.4461
+Epoch 2/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step - accuracy: 0.7187 - loss: 0.5532 - val_accuracy: 0.8750 - val_loss: 0.4006
+Epoch 3/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.7381 - loss: 0.4761 - val_accuracy: 0.9062 - val_loss: 0.3647
+Epoch 4/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.7621 - loss: 0.4490 - val_accuracy: 0.9062 - val_loss: 0.3366
+Epoch 5/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.7295 - loss: 0.4354 - val_accuracy: 0.9062 - val_loss: 0.3132
+Epoch 6/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.7666 - loss: 0.4364 - val_accuracy: 0.9375 - val_loss: 0.2977
+Epoch 7/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step - accuracy: 0.8289 - loss: 0.3316 - val_accuracy: 0.9375 - val_loss: 0.2833
+Epoch 8/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8571 - loss: 0.3174 - val_accuracy: 0.9375 - val_loss: 0.2667
+Epoch 9/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8729 - loss: 0.2907 - val_accuracy: 0.9375 - val_loss: 0.2551
+Epoch 10/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8787 - loss: 0.3078 - val_accuracy: 0.9062 - val_loss: 0.2486
+Epoch 11/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8515 - loss: 0.2832 - val_accuracy: 0.9062 - val_loss: 0.2392
+Epoch 12/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8247 - loss: 0.3187 - val_accuracy: 0.9375 - val_loss: 0.2306
+Epoch 13/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 9ms/step - accuracy: 0.8829 - loss: 0.3096 - val_accuracy: 0.9375 - val_loss: 0.2234
+Epoch 14/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8559 - loss: 0.3144 - val_accuracy: 0.9062 - val_loss: 0.2173
+Epoch 15/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 12ms/step - accuracy: 0.8441 - loss: 0.2960 - val_accuracy: 0.9375 - val_loss: 0.2072
+Epoch 16/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.9259 - loss: 0.2393 - val_accuracy: 0.9375 - val_loss: 0.1962
+Epoch 17/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 15ms/step - accuracy: 0.8578 - loss: 0.2696 - val_accuracy: 0.9375 - val_loss: 0.1915
+Epoch 18/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 10ms/step - accuracy: 0.8435 - loss: 0.2809 - val_accuracy: 0.9375 - val_loss: 0.1858
+Epoch 19/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - accuracy: 0.9121 - loss: 0.2611 - val_accuracy: 0.9375 - val_loss: 0.1813
+Epoch 20/20
+8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - accuracy: 0.9387 - loss: 0.2165 - val_accuracy: 0.9688 - val_loss: 0.1791
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 39ms/step  
+Dropout Model Test Accuracy: 0.8974358974358975
+```
+
+### Model Assessment
+To improve generalization and reduce overfitting, a `Dropout` layer was introduced after the first dense layer. While the validation accuracy peaked at **96.88%**, the final test accuracy settled at **89.74%**, matching the baseline model's generalization. The inclusion of dropout enhanced the model’s resistance to overfitting, especially visible through the stability of validation loss. This trade-off reflects a balanced architecture that maintains strong predictive power while prioritizing reliability on unseen data.
+
 ***
 ## Step 6: Deployment Plan
 - Briefly describe how you could deploy your model (e.g., API, web app, embedded system)
