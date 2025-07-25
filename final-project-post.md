@@ -107,6 +107,8 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
 ### Key Insights
 - 195 rows & 24 columns
 - No missing values
@@ -173,6 +175,8 @@ object      1
 int64       1
 Name: count, dtype: int64
 ```
+
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
 ```python
@@ -249,11 +253,11 @@ D2              195.0      NaN              NaN   NaN   2.381826   0.382799   1.
 PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.044539 0.137451 0.194052 0.25298   0.527367
 ```
 
----
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
 ### Target Variable > Status
 - 0 for healthy
 - 1 for Parkinson’s
----
 
 ### Code:
 ```python
@@ -381,6 +385,8 @@ dtype: int64
 
 - No missing values found in any column
 - Dataset is clean and ready for scaling and modeling
+
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
 ```python
