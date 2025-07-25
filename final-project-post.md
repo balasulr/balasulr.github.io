@@ -40,6 +40,7 @@ To install the required libraries **directly into the notebook's kernel**, use:
 ```
 
 - `%pip` ensures libraries install within the active notebook kernel
+
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ---
@@ -76,6 +77,7 @@ ML Type: Supervised Learning (Binary Classification) since the model is trained 
 - 1 = Parkinson’s Disease
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
 ***
 ## Step 2: Data Acquisition & EDA
 - Show key insights and visualizations
