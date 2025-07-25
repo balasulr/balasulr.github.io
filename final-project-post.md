@@ -76,9 +76,8 @@ ML Type: Supervised Learning (Binary Classification) since the model is trained 
 - 0 = healthy
 - 1 = Parkinson’s Disease
 
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
-
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 2: Data Acquisition & EDA
 - Show key insights and visualizations
 
