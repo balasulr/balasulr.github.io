@@ -33,6 +33,7 @@ According to the UCI ML Repository, the dataset "is composed of a range of biome
 #### Developed the final project in Visual Studio Code using a Jupyter Notebook (.ipynb) with the Python 3.10.11 kernel
 
 ---
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Library Installation Tip
 To install the required libraries **directly into the notebook's kernel**, use:
 ```python
@@ -42,7 +43,6 @@ To install the required libraries **directly into the notebook's kernel**, use:
 - `%pip` ensures libraries install within the active notebook kernel
 
 ---
-
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Import statements
 This project uses the following import for data analysis and modeling:
@@ -63,6 +63,7 @@ from tensorflow.keras.layers import Dense, Dropout
 ```
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 1: Define the Business Problem
 - What is the goal? Why does it matter?
 - State if it's: Supervised, Unsupervised, Recommender, or Reinforcement and why you chose that method
@@ -76,6 +77,7 @@ ML Type: Supervised Learning (Binary Classification) since the model is trained 
 - 1 = Parkinson’s Disease
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 2: Data Acquisition & EDA
 - Show key insights and visualizations
 
@@ -247,9 +249,11 @@ D2              195.0      NaN              NaN   NaN   2.381826   0.382799   1.
 PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.044539 0.137451 0.194052 0.25298   0.527367
 ```
 
+---
 ### Target Variable > Status
 - 0 for healthy
 - 1 for Parkinson’s
+---
 
 ### Code:
 ```python
@@ -393,6 +397,7 @@ All numerical features (excluding `status`) scaled using `StandardScaler`
 - `y` retains the binary target labels for classification
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 4: Modeling
 - Build one or more models aligned with your problem type
 
@@ -482,6 +487,7 @@ Epoch 20/20
 ```
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 5: Model Evaluation
 - Report metrics
 - Show how you improved it
@@ -599,10 +605,12 @@ Epoch 20/20
 Dropout Model Test Accuracy: 0.8974358974358975
 ```
 
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ### Model Assessment
 To improve generalization and reduce overfitting, a `Dropout` layer was introduced after the first dense layer. While the validation accuracy peaked at **96.88%**, the final test accuracy settled at **89.74%**, matching the baseline model's generalization. The inclusion of dropout enhanced the model’s resistance to overfitting, especially visible through the stability of validation loss. This trade-off reflects a balanced architecture that maintains strong predictive power while prioritizing reliability on unseen data.
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 6: Deployment Plan
 - Briefly describe how you could deploy your model (e.g., API, web app, embedded system)
 
