@@ -43,6 +43,7 @@ To install the required libraries **directly into the notebook's kernel**, use:
 
 ---
 
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Import statements
 This project uses the following import for data analysis and modeling:
 ```python
