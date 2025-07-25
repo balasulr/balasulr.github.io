@@ -107,13 +107,13 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
-
 ### Key Insights
 - 195 rows & 24 columns
 - No missing values
 - The name column has 195 unique values, confirming it is an identifier
 - Parkinson’s dominates with around 147 samples
+
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
 ```python
@@ -148,6 +148,8 @@ df.columns.tolist()
  'D2',
  'PPE']
 ```
+
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
 ```python
@@ -218,6 +220,8 @@ Data columns (total 24 columns):
 dtypes: float64(22), int64(1), object(1)
 memory usage: 36.7+ KB
 ```
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
 ### Code:
 ```python
 # Summary Statistics for all columns transposed
@@ -279,6 +283,8 @@ The bar chart displays the count of samples for each status category:
 - **Healthy (0)** → ~50 samples  
 - There is a class imbalance, which should be considered during model evaluation
 
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
 ### Code:
 ```python
 # Separate columns by type
@@ -315,6 +321,8 @@ categorical_cols, numerical_cols
   'D2',
   'PPE'])
 ```
+
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
 ```python
