@@ -330,9 +330,9 @@ This heatmap visualizes the correlation between all numerical features in the da
 - Cool colors (blue) indicate negative or low correlations
 - High correlation between features like `MDVP:Jitter(%)`, `MDVP:RAP`, and `Jitter:DDP` suggests potential multicollinearity
 - These relationships may influence feature selection or regularization in modeling
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 3: Data Cleaning
 - Handle missing values, transformations, scaling
 
@@ -396,9 +396,9 @@ y = df['status']
 All numerical features (excluding `status`) scaled using `StandardScaler`  
 - `X` now contains the transformed feature matrix  
 - `y` retains the binary target labels for classification
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 4: Modeling
 - Build one or more models aligned with your problem type
 
@@ -612,6 +612,7 @@ Dropout Model Test Accuracy: 0.8974358974358975
 To improve generalization and reduce overfitting, a `Dropout` layer was introduced after the first dense layer. While the validation accuracy peaked at **96.88%**, the final test accuracy settled at **89.74%**, matching the baseline model's generalization. The inclusion of dropout enhanced the model’s resistance to overfitting, especially visible through the stability of validation loss. This trade-off reflects a balanced architecture that maintains strong predictive power while prioritizing reliability on unseen data.
 
 ***
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 6: Deployment Plan
 - Briefly describe how you could deploy your model (e.g., API, web app, embedded system)
 
@@ -626,6 +627,5 @@ Both tools support model hosting locally or on cloud platforms such as **Heroku*
 - User authentication for secure data input  
 - Integration with a backend API for automated file parsing and preprocessing  
 - Embedding into mobile or desktop diagnostic tools for clinical use
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
