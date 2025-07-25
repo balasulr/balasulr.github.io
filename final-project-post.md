@@ -33,7 +33,6 @@ According to the UCI ML Repository, the dataset "is composed of a range of biome
 #### Developed the final project in Visual Studio Code using a Jupyter Notebook (.ipynb) with the Python 3.10.11 kernel
 
 ---
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Library Installation Tip
 To install the required libraries **directly into the notebook's kernel**, use:
 ```python
@@ -41,9 +40,9 @@ To install the required libraries **directly into the notebook's kernel**, use:
 ```
 
 - `%pip` ensures libraries install within the active notebook kernel
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ---
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Import statements
 This project uses the following import for data analysis and modeling:
 ```python
@@ -61,9 +60,9 @@ from sklearn.metrics import accuracy_score, classification_report
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 ```
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 1: Define the Business Problem
 - What is the goal? Why does it matter?
 - State if it's: Supervised, Unsupervised, Recommender, or Reinforcement and why you chose that method
@@ -76,8 +75,8 @@ ML Type: Supervised Learning (Binary Classification) since the model is trained 
 - 0 = healthy
 - 1 = Parkinson’s Disease
 
-***
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+***
 ## Step 2: Data Acquisition & EDA
 - Show key insights and visualizations
 
@@ -330,6 +329,7 @@ This heatmap visualizes the correlation between all numerical features in the da
 - Cool colors (blue) indicate negative or low correlations
 - High correlation between features like `MDVP:Jitter(%)`, `MDVP:RAP`, and `Jitter:DDP` suggests potential multicollinearity
 - These relationships may influence feature selection or regularization in modeling
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
 ## Step 3: Data Cleaning
@@ -395,9 +395,9 @@ y = df['status']
 All numerical features (excluding `status`) scaled using `StandardScaler`  
 - `X` now contains the transformed feature matrix  
 - `y` retains the binary target labels for classification
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 4: Modeling
 - Build one or more models aligned with your problem type
 
@@ -485,9 +485,9 @@ Epoch 20/20
 8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 11ms/step - accuracy: 0.9459 - loss: 0.1809 - val_accuracy: 0.9062 - val_loss: 0.1858
 <keras.src.callbacks.history.History at 0x25acca5fa00>
 ```
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 5: Model Evaluation
 - Report metrics
 - Show how you improved it
@@ -604,13 +604,13 @@ Epoch 20/20
 2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 39ms/step  
 Dropout Model Test Accuracy: 0.8974358974358975
 ```
-
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
+***
 ### Model Assessment
 To improve generalization and reduce overfitting, a `Dropout` layer was introduced after the first dense layer. While the validation accuracy peaked at **96.88%**, the final test accuracy settled at **89.74%**, matching the baseline model's generalization. The inclusion of dropout enhanced the model’s resistance to overfitting, especially visible through the stability of validation loss. This trade-off reflects a balanced architecture that maintains strong predictive power while prioritizing reliability on unseen data.
 
 ***
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 ## Step 6: Deployment Plan
 - Briefly describe how you could deploy your model (e.g., API, web app, embedded system)
 
@@ -625,5 +625,6 @@ Both tools support model hosting locally or on cloud platforms such as **Heroku*
 - User authentication for secure data input  
 - Integration with a backend API for automated file parsing and preprocessing  
 - Embedding into mobile or desktop diagnostic tools for clinical use
+[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ***
