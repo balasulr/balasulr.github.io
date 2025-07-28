@@ -575,7 +575,7 @@ print("Dropout Model Test Accuracy:", accuracy_score(y_test_target, y_pred_class
 ```
 
 ### Results:
-```
+```python
 Epoch 1/20
 8/8 ━━━━━━━━━━━━━━━━━━━━ 1s 26ms/step - accuracy: 0.7638 - loss: 0.5445 - val_accuracy: 0.9062 - val_loss: 0.4461
 Epoch 2/20
@@ -616,7 +616,7 @@ Epoch 19/20
 8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 24ms/step - accuracy: 0.9121 - loss: 0.2611 - val_accuracy: 0.9375 - val_loss: 0.1813
 Epoch 20/20
 8/8 ━━━━━━━━━━━━━━━━━━━━ 0s 20ms/step - accuracy: 0.9387 - loss: 0.2165 - val_accuracy: 0.9688 - val_loss: 0.1791
-2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 39ms/step  
+2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 39ms/step
 Dropout Model Test Accuracy: 0.8974358974358975
 ```
 - Final test accuracy: **89.74%**
