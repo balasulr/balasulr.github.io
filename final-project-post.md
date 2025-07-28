@@ -16,7 +16,6 @@ tags: [cscc]
 - [Step 3: Data Cleaning](#step-3-data-cleaning)
 - [Step 4: Modeling](#step-4-modeling)
 - [Step 5: Model Evaluation](#step-5-model-evaluation)
-- [Model Assessment](#model-assessment)
 - [Step 6: Deployment Plan](#step-6-deployment-plan)
 
 ***
@@ -619,9 +618,7 @@ Epoch 20/20
 2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 39ms/step  
 Dropout Model Test Accuracy: 0.8974358974358975
 ```
-[Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-***
 ### Model Assessment
 To improve generalization and reduce overfitting, a `Dropout` layer was introduced after the first dense layer. While the validation accuracy peaked at **96.88%**, the final test accuracy settled at **89.74%**, matching the baseline model's generalization. The inclusion of dropout enhanced the model’s resistance to overfitting, especially visible through the stability of validation loss. This trade-off reflects a balanced architecture that maintains strong predictive power while prioritizing reliability on unseen data.
 
