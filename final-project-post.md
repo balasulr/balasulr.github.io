@@ -106,12 +106,6 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
-### Key Insights
-- 195 rows & 24 columns
-- No missing values
-- The name column has 195 unique values, confirming it is an identifier
-- Parkinson’s dominates with around 147 samples
-
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
@@ -341,6 +335,13 @@ This heatmap visualizes the correlation between all numerical features in the da
 - Cool colors (blue) indicate negative or low correlations
 - High correlation between features like `MDVP:Jitter(%)`, `MDVP:RAP`, and `Jitter:DDP` suggests potential multicollinearity
 - These relationships may influence feature selection or regularization in modeling
+
+## Key Insights Summary
+- Dataset has **195 rows** & **24 columns**
+- All features are numeric except `name` (identifier)
+- The name column has 195 unique values, confirming it is an identifier
+- The Target variable of `status` is imbalanced since there are ~147 Parkinson’s and ~48 Healthy
+- Several voice metrics show high correlation (e.g. `MDVP:Jitter(%)`, `Jitter:DDP`)
 
 ***
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
