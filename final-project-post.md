@@ -523,7 +523,7 @@ print("TensorFlow Test Accuracy:", accuracy_score(y_test, preds))
 TensorFlow Test Accuracy: 0.8974358974358975
 ```
 
-- Final test accuracy: **89.74%**  
+- Final test accuracy: **89.74%**
 - This result confirms strong generalization on unseen data
 
 ### Code:
@@ -619,6 +619,17 @@ Epoch 20/20
 2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 39ms/step  
 Dropout Model Test Accuracy: 0.8974358974358975
 ```
+- Final test accuracy: **89.74%**
+
+### Baseline vs Dropout Model Comparison
+| Metric                      | Baseline Model | Dropout Model |
+|----------------------------|----------------|---------------|
+| **Final Test Accuracy**     | 89.74%         | 89.74%        |
+| **Peak Validation Accuracy**| 93.75%         | **96.88%**    |
+| **Epochs**                  | 20             | 20            |
+| **Validation Loss (Final)** | 0.1858         | **0.1791**    |
+| **Training Accuracy Final** | 94.59%         | **93.87%**    |
+| **Regularization**          | None           | Dropout(0.3)  |
 
 ### Model Assessment
 To improve generalization and reduce overfitting, a `Dropout` layer was introduced after the first dense layer. While the validation accuracy peaked at **96.88%**, the final test accuracy settled at **89.74%**, matching the baseline model's generalization. The inclusion of dropout enhanced the model’s resistance to overfitting, especially visible through the stability of validation loss. This trade-off reflects a balanced architecture that maintains strong predictive power while prioritizing reliability on unseen data.
