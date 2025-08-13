@@ -106,6 +106,10 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
+- Each row is a voice recording from a patient with 24 numerical features capturing the different acoustic characteristics
+- Status is a diagnosis label where 1 means the patient has Parkinson’s and 0 means they are healthy
+- The first five rows shown here have a status of 1 meaning that they are confirmed Parkinson’s cases
+
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
 ### Code:
@@ -155,7 +159,7 @@ df.shape
 (195, 24)
 ```
 
-Data has 195 rows and 24 columns
+Data has 195 rows and 24 columns.
 
 ### Code:
 ```python
