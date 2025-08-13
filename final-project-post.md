@@ -162,7 +162,7 @@ df.columns.tolist()
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### In order to understand the dataset’s structure, the shape is checked using `df.shape`, which returns the number of rows (samples) and columns (features)
+### In order to understand the dataset’s structure, the shape is checked using df.shape, which returns the number of rows (samples) and columns (features)
 
 #### Code:
 ```python
@@ -176,6 +176,8 @@ df.shape
 ```
 
 The shape (195, 24) indicates 195 voice samples (rows) and 24 acoustic features (columns), which include both the input variables and the target label
+
+### To assess the dataset's composition, the distribution of data types is examined across all columns. This helps distinguish between numerical features, categorical identifiers, and the target label
 
 #### Code:
 ```python
@@ -191,7 +193,14 @@ int64       1
 Name: count, dtype: int64
 ```
 
+The results show that out of the 24 columns in the dataset:
+- **22** are numerical features stored as `float64` (e.g., pitch, jitter, shimmer metrics),
+- **1** is a categorical/text column (`object`), likely the patient’s name,
+- **1** is an integer column (`int64`), which corresponds to the diagnosis label (`status`).
+
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
+
+### To further verify the completeness and structure of each column, the dataset is inspected using `df.info()`. This provides a concise summary of column names, data types, and the number of non-null entries
 
 #### Code:
 ```python
