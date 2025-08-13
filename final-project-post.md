@@ -80,7 +80,7 @@ ML Type: Supervised Learning (Binary Classification) since the model is trained 
 ## Step 2: Data Acquisition & EDA
 - Show key insights and visualizations
 
-### Code:
+#### Code:
 ```python
 # Import pandas library
 import pandas as pd
@@ -95,7 +95,7 @@ df.head()
 
 I got the data from the UCI ML Repository and pulled the data in from the url, which has a Public Domain license. As shown above, the dataset was read in directly through the site.
 
-### Results:
+#### Results:
 ```
     name    MDVP:Fo(Hz) MDVP:Fhi(Hz)    MDVP:Flo(Hz)    MDVP:Jitter(%)  MDVP:Jitter(Abs)    MDVP:RAP    MDVP:PPQ    Jitter:DDP  MDVP:Shimmer    ... Shimmer:DDA NHR HNR status  RPDE    DFA spread1 spread2 D2  PPE
 0   phon_R01_S01_1  119.992 157.302 74.997  0.00784 0.00007 0.00370 0.00554 0.01109 0.04374 ... 0.06545 0.02211 21.033  1   0.414783    0.815285    -4.813031   0.266482    2.301442    0.284654
@@ -106,7 +106,7 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
-Each row represents a voice sample from a patient, with 24 numerical features capturing different acoustic characteristics.
+Each row represents a voice sample from a patient, with 24 numerical features capturing different acoustic characteristics
 
 #### Feature Categories:
 - **Pitch Frequencies**:  
@@ -126,13 +126,13 @@ All five samples shown have `status = 1` meaning that they are confirmed Parkins
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+#### Code:
 ```python
 # Feature Names List
 df.columns.tolist()
 ```
 
-### Results:
+#### Results:
 ``` python
 ['name',
  'MDVP:Fo(Hz)',
@@ -162,26 +162,28 @@ df.columns.tolist()
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+### In order to understand the dataset’s structure, the shape is checked using `df.shape`, which returns the number of rows (samples) and columns (features)
+
+#### Code:
 ```python
 # Shape of data
 df.shape
 ```
 
-### Results:
+#### Results:
 ```python
 (195, 24)
 ```
 
-Data has 195 rows and 24 columns.
+The shape (195, 24) indicates 195 voice samples (rows) and 24 acoustic features (columns), which include both the input variables and the target label
 
-### Code:
+#### Code:
 ```python
 # Data types in dataset
 df.dtypes.value_counts()
 ```
 
-### Results:
+#### Results:
 ```python
 float64    22
 object      1
@@ -191,13 +193,13 @@ Name: count, dtype: int64
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+#### Code:
 ```python
 # Inspect the dataset
 df.info()
 ```
 
-### Results:
+#### Results:
 ```python
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 195 entries, 0 to 194
@@ -233,13 +235,13 @@ memory usage: 36.7+ KB
 ```
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+#### Code:
 ```python
 # Summary Statistics for all columns transposed
 df.describe(include='all').T
 ```
 
-### Results:
+#### Results:
 ```python
           count  unique              top  freq        mean        std        min       25%       50%       75%        max
 name     195.0    195.0  phon_R01_S01_1   1.0         NaN        NaN        NaN       NaN       NaN       NaN        NaN
@@ -274,7 +276,7 @@ PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.
 - 0 for healthy
 - 1 for Parkinson’s
 
-### Code:
+#### Code:
 ```python
 # Target variable distribution pie/bar chart
 import matplotlib.pyplot as plt
@@ -286,7 +288,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### Results:
+#### Results:
 ![Class Distribution Bar Chart](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
 The bar chart displays the count of samples for each status category:  
@@ -296,7 +298,7 @@ The bar chart displays the count of samples for each status category:
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+#### Code:
 ```python
 # Separate columns by type
 categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
@@ -305,7 +307,7 @@ numerical_cols = df.select_dtypes(include=['int64', 'float64']).columns.tolist()
 categorical_cols, numerical_cols
 ```
 
-### Results:
+#### Results:
 ```python
 (['name'],
  ['MDVP:Fo(Hz)',
@@ -335,7 +337,7 @@ categorical_cols, numerical_cols
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+#### Code:
 ```python
 # Correlation matrix
 plt.figure(figsize=(12, 10))
@@ -345,7 +347,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-### Results:
+#### Results:
 ![Model Accuracy Comparison](/assets/images/df_Correlation.matrix_output.png)
 
 This heatmap visualizes the correlation between all numerical features in the dataset
@@ -366,7 +368,7 @@ This heatmap visualizes the correlation between all numerical features in the da
 ## Step 3: Data Cleaning
 - Handle missing values, transformations, scaling
 
-### Code:
+#### Code:
 ```python
 # Drop identifier column of name 
 df.drop(['name'], axis=1, inplace=True)
@@ -375,13 +377,13 @@ df.drop(['name'], axis=1, inplace=True)
 - Identifier column **'name'** removed
 - Dataset now contains **23 numerical features** suitable for modeling
 
-### Code:
+#### Code:
 ```python
 # Check for Missing Values
 df.isnull().sum()
 ```
 
-### Results:
+#### Results:
 ```python
 MDVP:Fo(Hz)         0
 MDVP:Fhi(Hz)        0
@@ -414,7 +416,7 @@ dtype: int64
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### Code:
+#### Code:
 ```python
 # Feature Scaling
 from sklearn.preprocessing import StandardScaler
@@ -434,7 +436,7 @@ All numerical features (excluding `status`) scaled using `StandardScaler`
 ## Step 4: Modeling
 - Build one or more models aligned with your problem type
 
-### Code:
+#### Code:
 ```python
 # Preprocess data
 from sklearn.model_selection import train_test_split
@@ -446,7 +448,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, stratif
 - `X_train` and `X_test` contain scaled feature inputs  
 - `y_train` and `y_test` contain binary classification labels
 
-### Code:
+#### Code:
 ```python
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
@@ -472,7 +474,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 model.fit(X_train, y_train, epochs=20, batch_size=16, validation_split=0.2)
 ```
 
-### Results:
+#### Results:
 ```
 C:\Users\...\keras\src\layers\core\dense.py:93: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
   super().__init__(activity_regularizer=activity_regularizer, **kwargs)
@@ -526,7 +528,7 @@ Epoch 20/20
 - Show how you improved it
 - Write a short paragraph with your model assessment
 
-### Code:
+#### Code:
 ```python
 # Report metrics / Evaluate the model
 from sklearn.metrics import accuracy_score
@@ -535,7 +537,7 @@ preds = (model.predict(X_test) > 0.5).astype('int32')
 print("TensorFlow Test Accuracy:", accuracy_score(y_test, preds))
 ```
 
-### Results:
+#### Results:
 ```
 2/2 ━━━━━━━━━━━━━━━━━━━━ 0s 48ms/step  
 TensorFlow Test Accuracy: 0.8974358974358975
@@ -544,7 +546,7 @@ TensorFlow Test Accuracy: 0.8974358974358975
 - Final test accuracy: **89.74%**
 - This result confirms strong generalization on unseen data
 
-### Code:
+#### Code:
 ```python
 # Improved model
 from tensorflow.keras.layers import Dropout
@@ -592,7 +594,7 @@ y_pred_class = (y_pred_probs > 0.5).astype('int32')
 print("Dropout Model Test Accuracy:", accuracy_score(y_test_target, y_pred_class))
 ```
 
-### Results:
+#### Results:
 ```text
 Epoch 1/20
 8/8 ━━━━━━━━━━━━━━━━━━━━ 1s 26ms/step - accuracy: 0.7638 - loss: 0.5445 - val_accuracy: 0.9062 - val_loss: 0.4461
