@@ -200,7 +200,7 @@ The results show that out of the 24 columns in the dataset:
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-### To further verify the completeness and structure of each column, the dataset is inspected using `df.info()`. This provides a concise summary of column names, data types, and the number of non-null entries
+### To further verify the completeness and structure of each column, the dataset is inspected using df.info(). This provides a concise summary of column names, data types, and the number of non-null entries
 
 #### Code:
 ```python
