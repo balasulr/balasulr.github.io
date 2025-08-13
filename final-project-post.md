@@ -106,9 +106,23 @@ I got the data from the UCI ML Repository and pulled the data in from the url, w
 5 rows × 24 columns
 ```
 
-- Each row is a voice recording from a patient with 24 numerical features capturing the different acoustic characteristics
-- Status is a diagnosis label where 1 means the patient has Parkinson’s and 0 means they are healthy
-- The first five rows shown here have a status of 1 meaning that they are confirmed Parkinson’s cases
+Each row represents a voice sample from a patient, with 24 numerical features capturing different acoustic characteristics.
+
+#### Feature Categories:
+- **Pitch Frequencies**:  
+  `MDVP:Fo(Hz)`, `MDVP:Fhi(Hz)`, `MDVP:Flo(Hz)` - average, max, and min pitch
+- **Jitter Metrics**:  
+  `MDVP:Jitter(%)`, `MDVP:Jitter(Abs)`, `MDVP:RAP`, `MDVP:PPQ`, `Jitter:DDP` - pitch instability
+- **Shimmer Metrics**:  
+  `MDVP:Shimmer`, `MDVP:Shimmer(dB)`, `Shimmer:APQ3`, `Shimmer:APQ5`, `MDVP:APQ`, `Shimmer:DDA` - amplitude variation
+- **Noise Ratios**:  
+  `NHR`, `HNR` - noise vs. harmonic content
+- **Nonlinear Dynamics**:  
+  `RPDE`, `DFA`, `spread1`, `spread2`, `D2`, `PPE` - signal complexity
+- **Target Label**:  
+  `status` - diagnosis label (`1` = Parkinson’s, `0` = Healthy)
+
+All five samples shown have `status = 1` meaning that they are confirmed Parkinson’s cases
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
@@ -340,7 +354,7 @@ This heatmap visualizes the correlation between all numerical features in the da
 - High correlation between features like `MDVP:Jitter(%)`, `MDVP:RAP`, and `Jitter:DDP` suggests potential multicollinearity
 - These relationships may influence feature selection or regularization in modeling
 
-## Key Insights Summary
+#### Key Insights Summary:
 - Dataset has **195 rows** & **24 columns**
 - All features are numeric except `name` (identifier)
 - The name column has 195 unique values, confirming it is an identifier
