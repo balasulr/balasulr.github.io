@@ -126,11 +126,16 @@ All five samples shown have `status = 1` meaning that they are confirmed Parkins
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
+### This section extracts and displays the dataset’s 24 column names, which provides a complete overview of all available features, from the identifier (`name`) and numerical acoustic measurements (pitch, jitter, shimmer, noise ratios, nonlinear dynamics) to the target label (`status`). Listing them helps to confirm the dataset’s structure and ensure that all expected variables are present
+
 #### Code:
 ```python
 # Feature Names List
 df.columns.tolist()
 ```
+
+- This code returns all of the 24 column names from the dataset and displays them as a Python list
+- This allows for a quick check of the available features
 
 #### Results:
 ``` python
@@ -184,6 +189,9 @@ The shape (195, 24) indicates 195 voice samples (rows) and 24 acoustic features 
 # Data types in dataset
 df.dtypes.value_counts()
 ```
+
+- This code counts how many columns share each data type in the DataFrame
+- It quickly reveals the dataset’s composition > For example, how many numerical (`float64` or `int64`) vs. categorical (`object`) features there are, which help in deciding preprocessing steps like encoding categorical variables or scaling numeric ones
 
 #### Results:
 ```python
