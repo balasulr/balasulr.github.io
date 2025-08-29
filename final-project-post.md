@@ -307,6 +307,8 @@ PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.
 - 0 for healthy
 - 1 for Parkinson’s
 
+### This section generates a bar chart to examine the class balance of the target variable, which helps to identify whether the dataset is skewed toward one outcome
+
 #### Code:
 ```python
 # Target variable distribution pie/bar chart
@@ -319,13 +321,16 @@ plt.tight_layout()
 plt.show()
 ```
 
+- Displays the frequency of each `status` category (0 = Healthy, 1 = Parkinson’s) to see the actual counts behind the class balance
+
 #### Results:
 ![Class Distribution Bar Chart](/assets/images/df_Target.variable.distribution.pie_bar.chart_output.png)
 
-The bar chart displays the count of samples for each status category:  
+The bar chart shows the number of samples in each class:  
 - **Parkinson’s Disease (1)** → ~147 samples  
-- **Healthy (0)** → ~50 samples  
-- There is a class imbalance, which should be considered during model evaluation
+- **Healthy (0)** → ~50 samples
+
+This clear imbalance means that the dataset is weighted towards Parkinson’s cases, which is an important factor to consider during model training and evaluation
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
