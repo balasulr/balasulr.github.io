@@ -252,8 +252,7 @@ memory usage: 36.7+ KB
 ```
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
-###
-This section generates and displays a complete statistical summary for every column in the dataset, including both numeric and non‑numeric features. Also, it transposes the output so that each feature’s statistics appear in a single row for easier comparison
+### This section generates and displays a complete statistical summary for every column in the dataset, including both numeric and non‑numeric features. Also, it transposes the output so that each feature’s statistics appear in a single row for easier comparison
 
 #### Code:
 ```python
