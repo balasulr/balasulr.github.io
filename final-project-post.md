@@ -252,11 +252,16 @@ memory usage: 36.7+ KB
 ```
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
+###
+This section generates and displays a complete statistical summary for every column in the dataset, including both numeric and non‑numeric features. Also, it transposes the output so that each feature’s statistics appear in a single row for easier comparison
+
 #### Code:
 ```python
 # Summary Statistics for all columns transposed
 df.describe(include='all').T
 ```
+
+- Generates an overview of the dataset for each column using `df.describe(include='all')` and then transposes the table so each feature’s statistics are displayed in a single row for easier reading
 
 #### Results:
 ```python
@@ -286,6 +291,16 @@ spread2         195.0      NaN              NaN   NaN   0.22651    0.083406   0.
 D2              195.0      NaN              NaN   NaN   2.381826   0.382799   1.423287 2.099125 2.361532 2.636456 3.671155
 PPE             195.0      NaN              NaN   NaN   0.206552   0.090119   0.044539 0.137451 0.194052 0.25298   0.527367
 ```
+
+- Each feature is a row and each statistic is a column
+- **count** - Number of non‑null entries (195 present, so no missing values)
+- **unique / top / freq** - Only relevant for non‑numeric columns like `name` (195 unique names, most frequent appears once)
+- **mean / std** - Average and standard deviation for numeric features
+- **min, 25%, 50%, 75%, max** – Minimum, quartiles and maximum values for numeric features
+
+### Key Observations:
+- Every feature has 195 values with no missing data
+- **Identifier column**: `name` is unique for each sample, confirming no duplicates
 
 [Back to Top](#machine-learning-ii-final-project-parkinsons-disease-detection)
 
