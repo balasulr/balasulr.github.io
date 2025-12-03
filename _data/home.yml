@@ -34,5 +34,5 @@ project_entries:
     desc: "An End-to-End ML Solution Using Neural Networks and Deep Learning"
 
   - title: "AI for NLP Final Project: Q&A Chatbot"
-    url: AI-NLP-QA-Chatbot
+    url: ai-nlp-qa-chatbot
     desc: "Python and Streamlit Q&A chatbot leveraging Hugging Face Transformers (RoBERTa) to answer questions from uploaded documents or URLs"
