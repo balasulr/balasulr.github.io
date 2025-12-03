@@ -32,3 +32,7 @@ project_entries:
   - title: "Machine Learning II Final Project: Parkinson’s Disease Detection"
     url: final-project-post
     desc: "An End-to-End ML Solution Using Neural Networks and Deep Learning"
+
+  - title: "AI for NLP Final Project: Q&A Chatbot"
+    url: AI_NLP_QA_Chatbot
+    desc: "Python and Streamlit Q&A chatbot leveraging Hugging Face Transformers (RoBERTa) to answer questions from uploaded documents or URLs"
