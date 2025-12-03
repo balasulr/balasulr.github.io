@@ -6,6 +6,13 @@ tags: [cscc]
 
 ### [AI for NLP Final Project: Q&A Chatbot]
 
+## Introduction
+- This project demonstrates a Q&A chatbot built with Python, Streamlit, and Hugging Face Transformers. It allows users to upload documents (PDF, DOCX, TXT, HTML) or provide URLs, ask questions directly about the content, and receive context aware answers in real time. It is part of my AI for NLP final coursework and demonstrates an application of natural language processing via a Q&A chatbot. Hugging Face Transformers (RoBERTa) is used for question answering while Streamlit is used for the user interface
+
+## Demo
+- [OneDrive Demo](https://1drv.ms/v/c/fb23a8652d3d99e0/IQCKDmDPpnLiQrEEGGtmgKakAVw6QUJxLE9SjfdK6WHwcoc?e=BwsM1O)
+- [YouTube Demo](https://youtu.be/G-3kwEGt2N0)
+
 ## Installation & Steps
 Before doing below, create folder to place code & make sure that have **python 3.11**, **Anaconda Prompt**, a **code editor** installed
 
