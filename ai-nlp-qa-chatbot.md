@@ -16,7 +16,7 @@ tags: [cscc]
 ## Installation & Steps
 Before doing below, create folder to place code & make sure that have **python 3.11**, **Anaconda Prompt**, a **code editor** installed
 
-1. Run Anaconda Prompt as administrator and run following commands:
+Run Anaconda Prompt as administrator and run the following commands:
 #### 1. Navigate to your desired project directory
 ```bash
 cd path/to/your/project  # replace with your actual folder path
