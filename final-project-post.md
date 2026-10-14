@@ -56,7 +56,7 @@ import seaborn as sns
 # Modeling and Evaluation
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout
 ```
@@ -620,7 +620,7 @@ history_dropout = model_dropout.fit(
     validation_split=0.2
 )
 
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score
 
 # Make Predictions
 y_pred_probs = model_dropout.predict(X_test_scaled)
